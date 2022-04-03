@@ -1,7 +1,6 @@
 package main
 
 //300. Longest Increasing Subsequence
-
 func lengthOfLIS(nums []int) int {
 	n := len(nums)
 	LIS := make([]int, n)
