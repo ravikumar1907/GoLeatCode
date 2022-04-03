@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 Number of Connected Components in an Undirected Graph
 Medium
@@ -124,7 +122,7 @@ func findCircleNum1(isConnected [][]int) int {
 	return provinces
 }
 
-func main() {
+/*func main() {
 	m := [][]int{
 		{1, 1, 0},
 		{1, 1, 0},
@@ -132,4 +130,4 @@ func main() {
 	}
 	fmt.Println(findCircleNum(m))
 	fmt.Println(findCircleNum1(m))
-}
+}*/
