@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func missingNumber(nums []int) int {
 	n := len(nums)
 	sum := (n * (n + 1)) / 2
@@ -30,9 +26,9 @@ func findDuplicate(nums []int) int {
 	return fast
 }
 
-func main() {
+/*func main() {
 	a := []int{0, 1}
 	fmt.Println(missingNumber(a))
 	a = []int{2, 2, 2, 2, 2}
 	fmt.Println(findDuplicate(a))
-}
+}*/

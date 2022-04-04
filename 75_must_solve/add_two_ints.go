@@ -17,8 +17,15 @@ func getSum(a, b int) int {
 func maxOfTwoNumbers(a, b int) int {
 	c := a - b
 	size := unsafe.Sizeof(b) - 1
-	k := (c << size) & 1
-	return a - k*c
+	k := (c >> size)
+	return a - (k & c)
+}
+
+func minOfTwoNumbers(a, b int) int {
+	c := a - b
+	size := unsafe.Sizeof(b) - 1
+	k := (c >> size)
+	return b + (k & c)
 }
 
 func topKFrequent(nums []int, k int) []int {
@@ -45,8 +52,7 @@ func topKFrequent(nums []int, k int) []int {
 	return tmp
 }
 
-/*
-func main() {
+/*func main() {
 	fmt.Println(maxOfTwoNumbers(3, 5))
-}
-*/
+	fmt.Println(minOfTwoNumbers(3, 5))
+}*/
