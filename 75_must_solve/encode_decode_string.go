@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// 659: Encode Decode strings
+// Leetcode-659: Encode Decode strings
 func Encode(strs []string) string {
 	var res string
 	for _, s := range strs {
