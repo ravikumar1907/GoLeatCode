@@ -2,7 +2,6 @@ package main
 
 import (
 	"container/heap"
-	"fmt"
 )
 
 type IntHeap []int
@@ -56,20 +55,9 @@ func (this *MedianFinder1) FindMedian() float64 {
 	return float64(this.smallList.Top())
 }
 
+/*
 func main() {
-	/*maxHeap := &Max_Heap{}
-	heap.Init(maxHeap)
-	heap.Push(maxHeap, 5)
-	heap.Push(maxHeap, 8)
-	heap.Push(maxHeap, 7)
-	heap.Push(maxHeap, 9)
-	fmt.Printf("Top:%d, Heap:%v\n", maxHeap.Top(), maxHeap)
-	n := maxHeap.Len()
-	for n > 0 {
-		fmt.Print(heap.Pop(maxHeap).(int))
-		fmt.Print(" ")
-		n--
-	}*/
+
 	medianOfAges := new()
 	medianOfAges.InsertNum(22)
 	medianOfAges.InsertNum(35)
@@ -89,3 +77,4 @@ func main() {
 	//fmt.Printf("Small Top:%d, Small:%v, Large Top:%d, Large::%v\n", medianOfAges.smallList.Top(), medianOfAges.smallList, medianOfAges.largeList.Top(), medianOfAges.largeList)
 	fmt.Printf("The recommended content will be for ages under: %f\n", mf.FindMedian())
 }
+*/

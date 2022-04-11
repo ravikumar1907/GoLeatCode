@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func maxPerimeterOfIsland(grid [][]int) int {
 	m := len(grid)
 	n := len(grid[0])
@@ -36,6 +32,8 @@ func maxPerimeterOfIsland(grid [][]int) int {
 	}
 	return 0
 }
+
+/*
 func main() {
 	grid := [][]int{
 		{1, 1, 1, 1, 1, 1, 1, 0},
@@ -47,3 +45,4 @@ func main() {
 	fmt.Println(maxAreaOfIsland(grid))
 	fmt.Println(maxPerimeterOfIsland(grid))
 }
+*/

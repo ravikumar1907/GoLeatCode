@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //300. Longest Increasing Subsequence
 func lengthOfLIS(nums []int) int {
 	n := len(nums)
@@ -22,7 +20,9 @@ func lengthOfLIS(nums []int) int {
 	return res
 }
 
+/*
 func main() {
 	s := []int{10, 9, 2, 5, 3, 7, 101, 18}
 	fmt.Println(lengthOfLIS(s))
 }
+*/
