@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-//1. Two Sum
+// 1. Two Sum
 func twoSum(nums []int, target int) []int {
 	preMap := make(map[int]int)
 	result := []int{-1, -1}
@@ -24,7 +24,7 @@ func twoSum(nums []int, target int) []int {
 }
 
 // two sum given sorted array
-//167. Two Sum II - Input Array Is Sorted
+// 167. Two Sum II - Input Array Is Sorted
 func twosumSorted(numbers []int, target int) []int {
 	i := 0
 	j := len(numbers) - 1
@@ -41,7 +41,7 @@ func twosumSorted(numbers []int, target int) []int {
 	return []int{}
 }
 
-//15. 3Sum
+// 15. 3Sum
 func threeSum(nums []int) [][]int {
 	n := len(nums)
 	sort.Ints(nums)
@@ -57,7 +57,11 @@ func threeSum(nums []int) [][]int {
 			if sum == 0 {
 				result = append(result, []int{nums[i], nums[j], nums[k]})
 				k--
-				for j < k && nums[k] == nums[k-1] {
+				j++
+				for j < k && nums[j] == nums[j-1] {
+					j++
+				}
+				for j < k && nums[k] == nums[k+1] {
 					k--
 				}
 			} else if sum > 0 {
@@ -70,7 +74,7 @@ func threeSum(nums []int) [][]int {
 	return result
 }
 
-//18. 4Sum
+// 18. 4Sum
 func fourSum(nums []int, target int) [][]int {
 	sort.Ints(nums)
 	var result [][]int
@@ -116,7 +120,7 @@ func BubbleSort(a []int) {
 	}
 }
 
-//560. Subarray Sum Equals K
+// 560. Subarray Sum Equals K
 func subarraySum(nums []int, k int) int {
 	n := len(nums)
 	hMap := make(map[int]int)
@@ -134,7 +138,7 @@ func subarraySum(nums []int, k int) int {
 	return ans
 }
 
-//1679. Max Number of K-Sum Pairs
+// 1679. Max Number of K-Sum Pairs
 func maxOperations(nums []int, k int) int {
 	hMap := make(map[int]int)
 	cnt := 0

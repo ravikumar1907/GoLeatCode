@@ -66,6 +66,8 @@ func (s MedianFinder) FindMedian() float64 {
 	return float64(s.smallList.Top())
 }
 
+// heap from scratch
+// https://yuminlee2.medium.com/golang-heap-data-structure-45760f9562dc
 /*
 func main() {
 

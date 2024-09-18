@@ -7,9 +7,9 @@ func Min(i, j int) int {
 	return j
 }
 
-//153. Find Minimum in Rotated Sorted Array
+// 153. Find Minimum in Rotated Sorted Array
 // o(logn)
-func findMin(nums []int) int {
+func findMin3(nums []int) int {
 	l, r := 0, len(nums)-1
 	res := nums[0]
 	for l <= r {
@@ -26,6 +26,22 @@ func findMin(nums []int) int {
 		}
 	}
 	return res
+}
+
+func findMin(nums []int) int {
+	left, right := 0, len(nums)-1
+	for left < right {
+		mid := (left + right) / 2
+
+		if nums[mid] > nums[right] {
+			// Minimum is in the right part
+			left = mid + 1
+		} else {
+			// Minimum is in the left part or at mid
+			right = mid
+		}
+	}
+	return nums[left]
 }
 
 // O(n)

@@ -1,0 +1,19 @@
+
+1️⃣ Domain Name System (DNS)
+2️⃣ Load Balancer
+3️⃣ API Gateway
+4️⃣ CDN
+5️⃣ Forward Proxy vs Reverse Proxy
+6️⃣ Caching
+7️⃣ Data Partitioning
+8️⃣ Database Replication
+9️⃣ Distributed Messaging Systems
+🔟 Microservices
+1️⃣1️⃣ NoSQL Databases
+1️⃣2️⃣ Database Index
+1️⃣3️⃣ Distributed File Systems
+1️⃣4️⃣ Notification System
+1️⃣5️⃣ Full-text Search
+1️⃣6️⃣ Distributed Coordination Services
+1️⃣7️⃣ Heartbeat
+1️⃣8️⃣ Checksum
