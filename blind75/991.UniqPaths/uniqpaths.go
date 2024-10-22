@@ -79,3 +79,41 @@ func main() {
 	ret = uniquePaths(3, 7)
 	fmt.Println(ret)
 }
+
+/*
+62. Unique Paths in go language
+Yes, there's a mathematical way to solve the Unique Paths problem using combinatorics! The problem can be reduced to counting combinations, which avoids the need for dynamic programming and allows a more efficient solution.
+
+Mathematical Formula:
+The total number of unique paths from the top-left to the bottom-right corner in an m x n grid can be calculated using binomial coefficients.
+
+Since you can only move right or down, in order to reach the bottom-right corner, you need to make exactly:
+
+m - 1 down moves, and
+n - 1 right moves.
+In total, you need to make (m - 1) + (n - 1) moves, which simplifies to m + n - 2 moves.
+
+Out of these m + n - 2 moves, you need to choose m - 1 moves to go down (or equivalently n - 1 moves to go right). The number of ways to do this is given by the binomial coefficient:
+
+it's formula is NcR - choosing r out n
+*/
+
+// Helper function to compute factorial
+func factorial(x int) int {
+	res := 1
+	for i := 2; i <= x; i++ {
+		res *= i
+	}
+	return res
+}
+
+// Function to calculate the number of unique paths using combinatorics
+func uniquePaths(m int, n int) int {
+	// Compute the binomial coefficient (m+n-2)! / ((m-1)! * (n-1)!)
+	return factorial(m+n-2) / (factorial(m-1) * factorial(n-1))
+}
+
+func main() {
+	m, n := 3, 7
+	fmt.Println("Number of unique paths:", uniquePaths(m, n)) // Output: 28
+}

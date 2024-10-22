@@ -22,13 +22,13 @@ func canFinish(numCourses int, prerequisites [][]int) bool {
 		if visited[course] == 2 {
 			return true
 		}
-		visited[course] = 1
+		visited[course] = 1  // currently visting
 		for _, nextCourse := range adjList[course] {
 			if dfs(nextCourse) == false {
 				return false
 			}
 		}
-		visited[course] = 2
+		visited[course] = 2 // completed.
 		return true
 	}
 	for i := 0; i < numCourses; i++ {

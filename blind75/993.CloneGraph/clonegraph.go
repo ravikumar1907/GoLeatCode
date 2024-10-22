@@ -4,6 +4,8 @@ package main
 type Node struct {
 	Val       int
 	Neighbors []*Node
+
+	// Below two for linked list problem with random pointer
 	Next      *Node
 	Random    *Node
 }

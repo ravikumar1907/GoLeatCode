@@ -33,3 +33,22 @@ func main() {
 	fmt.Println(maxArea(height1)) // Expected output: 49
 	fmt.Println(maxArea(height2)) // Expected output: 1
 }
+
+func mostWaterContainer(height []int) int {
+	left, right := 0, len(height)-1
+
+	maxArea := 0
+	for left < right {
+		currentHeight := height[right]
+		if height[left] < currentHeight {
+			currentHeight = height[left]
+		}
+		currArea := currentHeight * (right - left)
+		maxArea = max(maxArea, currArea)
+		if height[left] < height[right] {
+			left++
+		} else {
+			right--
+		}
+	}
+}

@@ -36,14 +36,13 @@ func max(a, b int) int {
 	return b
 }
 func maxSubArray(nums []int) int {
-	n := len(nums)
-	maxSum := nums[0]
-	sum := nums[0]
-	for i := 1; i < n; i++ {
-		sum = max(nums[i], sum+nums[i])
-		maxSum = max(sum, maxSum)
+	currentMax := nums[0]
+	maxSoFar := nums[0]
+	for _, num := range nums[1:] {
+		currentMax = max(num, currentMax+num)
+		maxSoFar = max(maxSoFar, currentMax)
 	}
-	return maxSum
+	return maxSoFar
 }
 
 func maxSubArray2(nums []int) int {

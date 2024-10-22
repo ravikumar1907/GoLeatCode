@@ -21,24 +21,36 @@ func max(a, b int) int {
 /*
 O(n^2) solution
 */
-func lengthOfLIS(nums []int) int {
-	maxLen := 0
-	n := len(nums)
-	LIS := make([]int, n)
-	for i := 0; i < n; i++ {
-		LIS[i] = 1
+func lengthOfLISNew(nums []int) int {
+	if len(nums) == 0 {
+		return 0
 	}
-	for i := n - 1; i >= 0; i-- {
-		for j := i + 1; j < n; j++ {
-			if nums[i] < nums[j] {
-				LIS[i] = max(LIS[i], 1+LIS[j])
+
+	// Create a DP array
+	dp := make([]int, len(nums))
+	// Initialize the DP array
+	for i := range dp {
+		dp[i] = 1
+	}
+
+	// Fill the DP array
+	for i := 1; i < len(nums); i++ {
+		for j := 0; j < i; j++ {
+			if nums[i] > nums[j] {
+				dp[i] = max(dp[i], dp[j]+1)
 			}
 		}
-		if LIS[i] > maxLen {
-			maxLen = LIS[i]
+	}
+
+	// Find the maximum in the DP array
+	maxLength := 0
+	for _, length := range dp {
+		if length > maxLength {
+			maxLength = length
 		}
 	}
-	return maxLen
+
+	return maxLength
 }
 
 /*
